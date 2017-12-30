@@ -1,0 +1,76 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block background %}{{ asset('assets/img/images.jpg') }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
+{% endblock %}
+
+{% block inicio %}active{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="row">
+            <div id="rotate-demo3" class="rotate" data-rotate-interval="5000" data-rotate-animate="zoomIn,zoomOut">
+                <h2 class="rotate-arena"></h2>
+                <ul>
+                    <li>Permítanos <strong class="text-danger">certificarlo</strong> con una excelente calidad.</li>
+                    <li>Hacemos realidad sus <strong class="text-danger">ideas.</strong></li>
+                    <li>Elija su <span class="text-danger">curso</span> nosotros lo preparamos.</li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                    <div class="item-img">
+                        <a href="{{ path('capacitation') }}"><img src="{{ asset('assets/img/ser01.png') }}"></a>
+                    </div>
+                    <h3 class="pad-bt15">CAPACITACIÓN</h3>
+                    <p>Cursos diseñados acorde a tus necesidades.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                    <div class="item-img">
+                        <a href="{{ path('developer') }}"> <img src="{{ asset('assets/img/ser02.png') }}"></a>
+                    </div>
+                    <h3 class="pad-bt15">DESARROLLO WEB Y APLICACIONES</h3>
+                    <p>Tú tienes la idea, nosotros la desarrollamos.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                    <div class="item-img">
+                        <a href="{{ path('certification') }}"><img src="{{ asset('assets/img/ser03.png') }}"></a>
+                    </div>
+                    <h3 class="pad-bt15">CERTIFICACIONES</h3>
+                    <p>Certifícate con nosotros, tu escoges en que te quieres certificar.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                    <div class="item-img">
+                        <a href="{{ path('contact') }}"><img src="{{ asset('assets/img/ser04.png') }}"></a>
+                    </div>
+                    <h3 class="pad-bt15">SOPORTE EN LINEA</h3>
+                    <p>Asesores especializados para darte el soporte que te mereces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerDentro %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

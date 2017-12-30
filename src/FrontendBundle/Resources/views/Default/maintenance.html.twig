@@ -1,0 +1,72 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block background %}{{ asset('assets/img/background-blue.png') }}{% endblock %}
+
+{% block title %}Mantenimiento de Equipo | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+{% endblock %}
+
+{% block servicios %}active{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 wow flipInX">
+            <h1 class="espacioa ">¿Tus equipos están fallando?
+                ¿Necesitan una limpieza a fondo?
+                ¿Te falta un programa?
+                ¿Necesitas una Licencia?</h1>
+            <img src="{{ asset('assets/img/mantenimiento.jpg') }}" class="img-responsive" alt="Mantenimiento de equipo de computo">
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="section">
+        <div class="container">
+            <div class="row espacio1">
+                <div class="col-lg-12 col-sm-12 col-md-12">
+                    <h2 class="text-center">MANTENIMIENTO DE CENTRO DE CÓMPUTO</h2>
+                    <hr>
+                    <p class="textog text-center ">Gran parte de los <strong>problemas que ocurren en los sistemas de computación</strong> se pueden evitar o prevenir si llevamos a cabo un mantenimiento preventivo correcto:</p>
+                    <ul class="text-center wow flipInX" style="list-style: none;">
+                        <li class="mantenimiento "><strong>Incrementar la velocidad de tu computadora</strong></li>
+                        <li class="mantenimiento "><strong>Actualizar los drivers</strong></li>
+                        <li class="mantenimiento "><strong>Mantener la temperatura óptima de la CPU</strong></li>
+                        <li class="mantenimiento"><strong>Preparar la recuperación rápida de una caída<strong></li>
+                    </ul>
+                    <p class="text-center wow slideInLeft"><a href="{{ path('contact') }}"><button class="btn btn-primary boton"></i>Pregunta por nuestros precios.</button></a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                    <img src="{{ asset('assets/img/soporte.png') }}" alt="Mantenimiento de Equipo de Cómputo">
+                </div>
+                <div class="col-lg-6 col-md-6 visible-lg visible-md">
+                    <h2>¿Qué incluye el soporte mensual?</h2>
+                    <ul class="textog">
+                        <li>Mantenimiento preventivo y correctivo</li>
+                        <li>Instalación, configuración y mantenimiento de hardware y software</li>
+                        <li>Personal técnico especializado y centrado en atención y soporte individualizado al cliente</li>
+                        <li>Soporte telefónico y por Skype para aclaración de dudas y asistencia remota</li>
+                        <li>Servicio prioritario</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

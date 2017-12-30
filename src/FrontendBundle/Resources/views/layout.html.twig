@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block metas %}{% endblock %}
+    <meta property="og:url" content="{{ absolute_url(path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params'))) }}"/>
+    {% block opengraph %}{% endblock %}
+
+    <title>{% block title %}CI{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img/icon_ci.png') }}">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div id="myDiv">
+    <!--HEADER-->
+    <div class="header" style="background: url('{% block background %}{% endblock %}') no-repeat fixed;">
+        <div class="bg-color" >
+            <header id="main-header">
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#"><img src="{{ asset('assets/img/logo_ci_white.png') }}" height="60"></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="{% block inicio %}{% endblock %}"><a href="{{ path('homepage') }}">Inicio</a></li>
+                                <li class="{% block acerca %}{% endblock %}"><a href="{{ path('about') }}">Acerca de</a></li>
+                                <li class="{% block servicios %}{% endblock %} dropdown">
+                                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                                    "dropdown" data-toggle="dropdown" href="#">Servicios <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ path('capacitation') }}">Capacitaciones</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('developer') }}">Desarrollo Web</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('certification') }}">Certificaciones</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('sell') }}">Venta de Equipo</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('maintenance') }}">Mantenimiento de Equipo</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="{% block contacto %}{% endblock %}"><a href="{{ path('contact') }}">Contacto</a></li>
+                                <li class="redes">
+                                    <ul class="social">
+                                        <li> <a href="https://www.facebook.com/CapacitacionInformaticaMX/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        {#<li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>#}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="container">
+                <div class="row">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+            {% block footerDentro %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block section %}
+    {% endblock %}
+    {% block footerFuera %}
+    {% endblock %}
+</div>
+
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.rotator.js') }}"></script>
+<script src="{{ asset('assets/js/wow.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
+{% block javascript %}{% endblock %}
+
+</body>
+</html>

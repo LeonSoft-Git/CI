@@ -1,0 +1,133 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+{% endblock %}
+
+{% block title %}Desarrollo Web | {{ parent() }}{% endblock %}
+
+{% block background %}{{ asset('assets/img/desarrollo.jpg') }}{% endblock %}
+
+{% block servicios %}active{% endblock %}
+
+{% block body %}
+    <div class="banner-info">
+        <div class="row text-center espaciotop">
+            <h1>Nosotros desarrollamos </h1><h1 class="letras"></h1>
+        </div>
+        <hr>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="section">
+        <div class="container">
+            <div class="row espacio1">
+                <div class="col-lg-4 col-xs-12">
+                    <p class="textog text-justify"><strong>En CI hacemos tus ideas realidad.</strong> Nuestro equipo de desarrollo web cuenta con la experiencia que tú página necesita, para que sea la mejor en su categoría.</p>
+                </div>
+                <div class="col-lg-4 visible-lg visble-md">
+                    <img src="{{ asset('assets/img/mundo.png') }}" class="img-responsive">
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <p class="textog text-justify">Nuestros paquetes de diseño web, están hechos pensando en cubrir todas las necesidades y poder tener una página web profesional, de fácil navegación y con contenido de calidad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Precios-->
+    <div class="section">
+        <div class="container">
+            <div class="row espacio1">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="panel price panel-red">
+                        <div class="panel-heading  text-center">
+                            <h3>BÁSICO</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                        </div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 4 Páginas/Secciones</li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Diseño Básico</li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 1 Banner</li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 1 Formulario</li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i>Adaptable a móviles</li>
+                        </ul>
+                        <div class="panel-footer">
+                            {#TODO formulario desarrollo web#}
+                            <a class="btn btn-lg btn-block btn-danger" href="contact.html">Compar ahora!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="panel price panel-blue">
+                        <div class="panel-heading arrow_box text-center">
+                            <h3>STANDARD</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                        </div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><i class="icon-ok text-info"></i> 8 Páginas/Secciones</li>
+                            <li class="list-group-item"><i class="icon-ok text-info"></i> 1 Banner</li>
+                            <li class="list-group-item"><i class="icon-ok text-info"></i> 1 Formulario</li>
+                            <li class="list-group-item"><i class="icon-ok text-info"></i> 1 Galería de imágenes</li>
+                            <li class="list-group-item"><i class="icon-ok text-info"></i> Adaptable a móviles</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-info" href="#">Comprar ahora!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="panel price panel-green">
+                        <div class="panel-heading arrow_box text-center">
+                            <h3>PRO</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                        </div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><i class="icon-ok text-success"></i> 12 Páginas/Secciones</li>
+                            <li class="list-group-item"><i class="icon-ok text-success"></i> 2 Banners</li>
+                            <li class="list-group-item"><i class="icon-ok text-success"></i> 2 Formularios</li>
+                            <li class="list-group-item"><i class="icon-ok text-success"></i>2 Galerías de imágenes</li>
+                            <li class="list-group-item"><i class="icon-ok text-success"></i>Gestión de contenido</li>
+                            <li class="list-group-item"><i class="icon-ok text-success"></i> Google Analytics</li>
+                            <li class="list-group-item"><i class="icon-ok text-success"></i> Adaptable a móviles</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-success" href="#">Comprar ahora!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascript %}
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.letras').typeIt({
+                strings: ["tús páginas web ", "la webapp que necesitas", "tu sistema informático"],
+                speed: 160,
+                breakLines: false,
+                loop: true
+            });
+        });
+    </script>
+{% endblock %}

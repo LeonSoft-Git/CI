@@ -1,0 +1,61 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block background %}{{ asset('assets/img/background-blue.png') }}{% endblock %}
+
+{% block title %}Ventas | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+{% endblock %}
+
+{% block servicios %}active{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
+            <h1 class="wow flipInX">Tenemos todo en equipos y artículos para oficina</h1>
+            <h2 class="wow flipInX">La mejor tecnología empresarial</h2>
+            <img src="{{ asset('assets/img/venta.png') }}" class="img-responsive" alt="Venta de equipo de computo">
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="section">
+        <div class="container-fluid ">
+            <div class="row text-center backbanner">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row espacio1">
+                <div class="col-lg-12 col-sm-12 col-md-12">
+                    <h2 class="text-center wow flipInX">VENTA DE CENTRO DE COMPUTO</h2>
+                    <hr>
+                    <p class="textog text-center wow slideInLeft">¿Buscas un Equipo de Cómputo?… En CI te ofrecemos equiparte <strong>con la mejor tecnología</strong>, ya sea para tu uso personal, empresa o negocio. Contamos con lo último en centros de cómputo, las mejores marcas y modelos, precios competitivos y diferentes características de equipos para ofrecerte.</p>
+                    <p class="textog text-center wow slideInLeft"><strong>Somos distribuidores autorizados en venta de computadoras, con más de diez años de experiencia.</strong></p>
+                    <p class="text-center wow slideInLeft"><a href="{{ path('contact') }}"><button class="btn btn-primary boton"><i class="fa fa-hand-o-up" aria-hidden="true"></i> Solicita una cotización ahora</button></a></p>
+                    <p class="textog text-center wow flipInX"><strong>Manejamos Todas Las Marcas y Modelos</strong></p>
+                </div>
+            </div>
+            <div class="row wow flipInX">
+                <div class="col-lg-3 col-md-12 col-sm-12 "><p class="textogr text-center">Computadoras de Escritorio</div>
+                <div class="col-lg-3 col-md-12 col-sm-12"><p class="textogr text-center">Laptops</p></div>
+                <div class="col-lg-3 col-md-12 col-sm-12"><p class="textogr text-center">Escritorios</p></div>
+                <div class="col-lg-3 col-md-12 col-sm-12"><p class="textogr text-center">Redes</p></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

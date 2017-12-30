@@ -1,0 +1,163 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block background %}{{ asset('assets/img/images4.jpg') }}{% endblock %}
+
+{% block title %}Contacto | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/sweetalert/sweetalert.css') }}">
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('assets/sweetalert/sweetalert.min.js') }}"></script>
+    {% if enviado==1 %}
+        <script type="text/javascript">
+            $(document).ready(function () {
+                swal({
+                    title: "Mensaje Enviado!",
+                    text: "Gracias!<br>Pronto te contactaremos.",
+                    type: "success",
+                    html:true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "OK!",
+                    closeOnConfirm: true
+                });
+
+            });
+        </script>
+    {% endif %}
+{% endblock %}
+
+{% block contacto %}active{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center wow fadeIn delay-05s">
+        <div class="row">
+            <h1><strong>Contáctanos</strong></h1>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="wrap-item text-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <h1>Contáctanos</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-lg-5 col-xs-12 col-md-12">
+                    <h4 class="title custom-font text-black">
+                        HORARIO DE ATENCIÓN
+                    </h4>
+                    <p>Lunes - Viernes | 8am a 8pm</p>
+                    <hr>
+                    <h4>
+                        TELÉFONO
+                    </h4>
+                    <p>
+                        <i class="fa fa-mobile-phone">
+                        </i>
+                        722-50-46-900
+                    </p>
+
+                    <p>
+                        <i class="fa fa-mobile-phone">
+                        </i>
+                        722-542-49-66
+                    </p>
+
+                </div>
+
+                <div class="col-lg-7 col-sm-7 address">
+                    <div class="contact-form">
+                        {{ form_start(form,  {'action':path('contact')}) }}
+                            <div class="form-group">
+                                {{ form_label(form.nombre) }}
+                                {{ form_widget(form.nombre, {'attr': {'class': 'form-control'} }) }}
+                                {% if form.nombre.vars.errors|length > 0 %}
+                                    <p class="help-block">
+                                        {% for error in form.nombre.vars.errors %}
+                                            {{ error.message }} <br/>
+                                        {% endfor %}
+                                    </p>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.apellidos) }}
+                                {{ form_widget(form.apellidos, {'attr': {'class': 'form-control'} }) }}
+                                {% if form.apellidos.vars.errors|length > 0 %}
+                                    <p class="help-block">
+                                        {% for error in form.apellidos.vars.errors %}
+                                            {{ error.message }} <br/>
+                                        {% endfor %}
+                                    </p>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.email) }}
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
+                                {% if form.email.vars.errors|length > 0 %}
+                                    <p class="help-block">
+                                        {% for error in form.email.vars.errors %}
+                                            {{ error.message }} <br/>
+                                        {% endfor %}
+                                    </p>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.telefono) }}
+                                {{ form_widget(form.telefono, {'attr': {'class': 'form-control'} }) }}
+                                {% if form.telefono.vars.errors|length > 0 %}
+                                    <p class="help-block">
+                                        {% for error in form.telefono.vars.errors %}
+                                            {{ error.message }} <br/>
+                                        {% endfor %}
+                                    </p>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.mensaje) }}
+                                {{ form_widget(form.mensaje, {'attr': {'class': 'form-control'} }) }}
+                                {% if form.mensaje.vars.errors|length > 0 %}
+                                    <p class="help-block">
+                                        {% for error in form.mensaje.vars.errors %}
+                                            {{ error.message }} <br/>
+                                        {% endfor %}
+                                    </p>
+                                {% endif %}
+                            </div>
+                        {{ form_widget(form.enviar, {'attr': {'class ': 'btn btn-primary'} }) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

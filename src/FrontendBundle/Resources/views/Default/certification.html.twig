@@ -1,0 +1,59 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+{% endblock %}
+
+{% block title %}Certificaciones | {{ parent() }}{% endblock %}
+
+{% block background %}{{ asset('assets/img/certification.jpg') }}{% endblock %}
+
+{% block servicios %}active{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="row espacio">
+            <div id="rotate-demo3" class="rotate" data-rotate-interval="6000" data-rotate-animate="zoomIn,zoomOut">
+                <h2 class="rotate-arena"></h2>
+                <ul>
+                    <li>Justo lo que tu <strong class="text-danger">empresa</strong> necesita.</li>
+                    <li>Certificación escolar aceptada por <strong class="text-danger"> Microsoft.</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="section">
+        <div class="container">
+            <div class="row espacioa text-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i> CERTIFICACIONES <i class="fa fa-graduation-cap" aria-hidden="true"></i></h1>
+                </div>
+            </div>
+            <hr>
+            <div class="row espacio1">
+                <div class="col-lg-8 col-sm-8 col-md-8">
+                    <p class="textog"><strong>CI es una empresa comprometida.</strong> en ofrecer tanto a las instituciones educativas del país, como a empresas del sector público y privado diferentes soluciones, productos y servicios para apoyar los programas académicos que forman parte del área de tecnologías de información.<p>
+                    <p class="textog">Se ha llegado a la conclusión, a nivel mundial, de que la función de la escuela debe centrarse en el desarrollo de habilidades, capacidades y destrezas, para el logro de competencias de manera efectiva e integral en la vida diaria que demanda el mundo globalizado. </p>
+                    <p class="textog"><strong>CI</strong> tiene un programa que permite el trabajo sistemático de habilidades para el aprendizaje, utilizando la lógica, la reflexión y la creación de estrategias para solucionar problemas concretos. Es por ello que el Programa de Tecnología Educativa tiene el objetivo de brindar apoyo y experiencia dentrode las instituciones educativas para <strong>Elevar el nivel de Cultura Informática</strong></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

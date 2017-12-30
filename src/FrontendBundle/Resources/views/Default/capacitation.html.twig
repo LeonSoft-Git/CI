@@ -1,0 +1,108 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+{% endblock %}
+
+{% block title %}Capacitaciones | {{ parent() }}{% endblock %}
+
+{% block background %}{{ asset('assets/img/images5.jpg') }}{% endblock %}
+
+{% block servicios %}active{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="row espacio">
+            <div id="rotate-demo3" class="rotate" data-rotate-interval="6000" data-rotate-animate="zoomIn,zoomOut">
+                <h2 class="rotate-arena"></h2>
+                <ul>
+                    <li>Deja atras los mitos, es hora de una <strong class="text-danger">actualización.</strong> </li>
+                    <li>Tu elijes en que área te quieres<strong class="text-danger"> capacitar,</strong> nosotros hacemos el resto.</li>
+                    <li>Tenemos a los <strong class="text-danger">mejores instructores. </strong> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="container">
+        <section>
+            <div class="row">
+                <h1 class="text-center wow flipInX"><strong>CAPACITACIONES A TU MEDIDA</strong></h1>
+                <hr>
+                <div class="col-lg-4 visible-lg wow flipInX">
+                    <img src="{{ asset('assets/img/service1.jpg') }}"  class="img-responsive">
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 wow flipInX">
+                    <p>Somos una empresa que proporciona soluciones de capacitación y entrenamiento en informática a cualquier nivel dentro de las organizaciones industriales, financieras, educativas, etc.</p>
+
+                    <p>Esto se logra a través de un modelo de capacitación en el cual se ejemplifican situaciones reales a las que se enfrenta el usuario día con día, y que con la experiencia de nuestros asesores se puede transmitir de un modo 100% práctico, manejando todas las aplicaciones del programa, contamos con herramientas de apoyo, como son manuales y prácticas diseñadas para poder continuar con un autoestudio y así reforzar los conocimientos adquiridos durante la capacitación.</p>
+
+                    <p>Al finalizar el curso los participantes podrán presentar un examen de Certificación Microsoft, obteniendo con esto un documento que avala el manejo del programa (al nivel que se curso), esta certificación queda registrada por el proveedor y la Secretaría del Trabajo.</p>
+
+                    <p>Ponte en contacto con nosotros para recibir una mejor atención. <a href="{{ path('contact') }}">Da click aquí.</a></p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <h2 class="wow flipInX">
+                    BENEFICIOS
+                </h2>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Cursos diseñados a sus necesidades de contenido y tiempo.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Materiales autorizados por Microsoft para el mejor aprendizaje.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Reconocimientos otorgados por Microsoft y Adobe.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Material de repaso al finalizar el curso.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Cursos que cuentan con la aprobación de la secretaría del Trabajo.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Asesoria por vía remota a los participantes del curso.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Garantía de satisfacción.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p><i class="fa fa-check"></i> Aprendizaje en línea a través de Testing Program (Microsoft y Adobe).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CIE - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

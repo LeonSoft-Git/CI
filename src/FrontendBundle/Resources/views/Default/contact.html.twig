@@ -2,6 +2,13 @@
 
 {% block background %}{{ asset('assets/img/images4.jpg') }}{% endblock %}
 
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Contacto" />
+    <meta property="og:description" content="Contáctanos" />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+{% endblock %}
+
 {% block title %}Contacto | {{ parent() }}{% endblock %}
 
 {% block stylesheets %}

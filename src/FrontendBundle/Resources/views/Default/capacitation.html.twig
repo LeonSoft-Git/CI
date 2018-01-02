@@ -6,6 +6,19 @@
 
 {% block title %}Capacitaciones | {{ parent() }}{% endblock %}
 
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Capacitaciones" />
+    <meta property="og:description" content="Somos una empresa que proporciona soluciones de capacitación y
+    entrenamiento en informática a cualquier nivel dentro de las organizaciones industriales, financieras, educativas, etc.
+    Esto se logra a través de un modelo de capacitación en el cual se ejemplifican situaciones reales a las que se
+    enfrenta el usuario día con día, y que con la experiencia de nuestros asesores se puede transmitir de un modo 100%
+    práctico, manejando todas las aplicaciones del programa, contamos con herramientas de apoyo, como son manuales y
+    prácticas diseñadas para poder continuar con un autoestudio y así reforzar los conocimientos adquiridos durante la
+    capacitación." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+{% endblock %}
+
 {% block background %}{{ asset('assets/img/images5.jpg') }}{% endblock %}
 
 {% block servicios %}active{% endblock %}

@@ -2,6 +2,16 @@
 
 {% block background %}{{ asset('assets/img/background-blue.png') }}{% endblock %}
 
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Ventas" />
+    <meta property="og:description" content="En CI te ofrecemos equiparte con la mejor tecnología, ya sea para tu uso
+    personal, empresa o negocio. Contamos con lo último en centros de cómputo, las mejores marcas y modelos, precios
+    competitivos y diferentes características de equipos para ofrecerte. Somos distribuidores autorizados en venta de
+    computadoras, con más de diez años de experiencia." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+{% endblock %}
+
 {% block title %}Ventas | {{ parent() }}{% endblock %}
 
 {% block stylesheets %}

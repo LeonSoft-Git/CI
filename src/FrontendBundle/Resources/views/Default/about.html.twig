@@ -4,6 +4,14 @@
 
 {% block title %}Acerca De | {{ parent() }}{% endblock %}
 
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Acerca De" />
+    <meta property="og:description" content="Somos una empresa que proporciona soluciones informáticas de capacitación
+    y entrenamiento en informática a cualquier nivel dentro de las organizaciones; además ofrece Desarrollo Web de Calidad y Venta de Equipo de Cómputo y Consumibles." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+{% endblock %}
+
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
 {% endblock %}

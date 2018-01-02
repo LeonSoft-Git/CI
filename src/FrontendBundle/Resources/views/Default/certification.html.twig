@@ -4,6 +4,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
 {% endblock %}
 
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Certificaciones" />
+    <meta property="og:description" content="CI es una empresa comprometida. en ofrecer tanto a las instituciones
+    educativas del país, como a empresas del sector público y privado diferentes soluciones, productos y servicios para
+     apoyar los programas académicos que forman parte del área de tecnologías de información." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+{% endblock %}
+
 {% block title %}Certificaciones | {{ parent() }}{% endblock %}
 
 {% block background %}{{ asset('assets/img/certification.jpg') }}{% endblock %}

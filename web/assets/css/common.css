@@ -442,3 +442,26 @@ input{
         height: 50px;
     }
 }
+
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16/9 ratio */
+    padding-top: 5%; /* IE6 workaround*/
+    height: 0;
+    overflow: hidden;
+}
+
+video iframe,
+video object,
+video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

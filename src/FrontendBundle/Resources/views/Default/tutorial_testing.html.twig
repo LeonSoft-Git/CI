@@ -1,0 +1,49 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+{% endblock %}
+
+{% block title %}Tutorial Testing Program | {{ parent() }}{% endblock %}
+
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Tutorial Testing Program" />
+    <meta property="og:description" content="Tutorial del proceso de Instalación y Uso de Testing Program." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+{% endblock %}
+
+{% block background %}{{ asset('assets/img/tutoriales.jpg') }}{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center wow fadeIn delay-05s">
+        <div class="row">
+            <h1><strong>Tutorial Testing Program</strong></h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{ asset('assets/video/tutoriales/tutorialtesting.mp4') }}" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

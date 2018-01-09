@@ -53,6 +53,20 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/lasalle", name="salle")
+     */
+    public function salleAction(){
+        return $this->render('@Frontend/Default/practice.html.twig');
+    }
+
+    /**
+     * @Route("/tutorial-testing", name="tutorial-testing")
+     */
+    public function tutorialtestingAction(){
+        return $this->render('@Frontend/Default/tutorial_testing.html.twig');
+    }
+
+    /**
      * @Route("/mantenimiento", name="maintenance")
      */
     public function maintenanceAction(){

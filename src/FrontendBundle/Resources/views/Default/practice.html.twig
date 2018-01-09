@@ -1,0 +1,186 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block background %}{{ asset('assets/img/background-blue.png') }}{% endblock %}
+
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Prácticas" />
+    <meta property="og:description" content="Prácticas para Cursos." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+{% endblock %}
+
+{% block title %}Prácticas | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/practice.css') }}">
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        $(function(){
+            $('a[title]').tooltip();
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
+            <h1 class="wow flipInX">Prácticas</h1>
+            <h2 class="wow flipInX">La Salle Neza</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="section">
+        <div class="container-fluid ">
+            <div class="row text-center backbanner">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row espacio1">
+                <div class="col-sm-12">
+                    <section style="background:#efefe9;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="board">
+                                    <div class="board-inner">
+                                        <ul class="nav nav-tabs" id="myTab">
+                                            <div class="liner"></div>
+                                            <li class="active">
+                                                <a href="#excel" data-toggle="tab" title="Excel">
+                                                  <span class="round-tabs one">
+                                                          <i class="fa fa-file-excel-o"></i>
+                                                  </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#power" data-toggle="tab" title="PowerPoint">
+                                                 <span class="round-tabs two">
+                                                     <i class="fa fa-file-powerpoint-o"></i>
+                                                 </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#word" data-toggle="tab" title="Word">
+                                                 <span class="round-tabs three">
+                                                      <i class="fa fa-file-word-o"></i>
+                                                 </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade in active" id="excel">
+                                            {#<h3 class="head text-center">Welcome to Bootsnipp<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
+                                            <p class="narrow text-center">
+                                                Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                            </p>#}
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/datos_inicial.xlsx') }}" download="Datos Inicial" class="btn btn-success btn-outline-rounded green"> datos inicial <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/prepa_prac_1.xlsx') }}" download="Práctica 1" class="btn btn-success btn-outline-rounded green"> práctica 1 <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/prepa_prac_2.xlsx') }}" download="Práctica 2" class="btn btn-success btn-outline-rounded green"> práctica 2 <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/practica_subtotales.xlsx') }}" download="Práctica Subtotales" class="btn btn-success btn-outline-rounded green"> práctica subtotales <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/empleados_pais.xlsx') }}" download="Empleados País" class="btn btn-success btn-outline-rounded green"> empleados país <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/final_excel.zip') }}" download="Excel1" class="btn btn-success btn-outline-rounded green"> excel 1 <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="power">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/practica_1.pptx') }}" download="Práctica 1" class="btn btn-success btn-outline-rounded green"> práctica 1 <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="word">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/puerto_vallarta.docx') }}" download="Puerto Vallarta" class="btn btn-success btn-outline-rounded green"> puerto vallarta <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/animalia.docx') }}" download="Animalía" class="btn btn-success btn-outline-rounded green"> animalía <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/paracaidismo.docx') }}" download="Paracaídismo" class="btn btn-success btn-outline-rounded green"> paracaídismo <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/practica_2_word.pptx') }}" download="Práctica 2" class="btn btn-success btn-outline-rounded green"> práctica 2 <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/adolescentes.docx') }}" download="Adolescentes" class="btn btn-success btn-outline-rounded green"> adolescentes <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/las_siete_maravillas_del_mundo.docx') }}" download="Las Siete Maravillas del Mundo" class="btn btn-success btn-outline-rounded green"> las siete maravillas del mundo <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/practica_final_word.pptx') }}" download="Práctica Final" class="btn btn-success btn-outline-rounded green"> practica final <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,305 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block background %}{{ asset('assets/img/background-blue.png') }}{% endblock %}
+
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Prácticas {{ empresas.nombre }}" />
+    <meta property="og:description" content="Prácticas para Cursos en {{ empresas.nombre }}." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+    <meta property="keywords" content="capacitacion informatica,capacitacion,informatica,excel,desarrollo web,certificacion,certificaciones,equipo de computo,computo,consumibles,venta">
+    <meta property="description" content="Capacitación Informática, Desarrollo Web, Certificaciones y Venta de Equipo de Cómputo y Consumibles">
+{% endblock %}
+
+{% block title %}Prácticas {{ empresas.nombre }} | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/practice.css') }}">
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function(){
+                $('a[title]').tooltip();
+            });
+            var sel = [];
+            {% for p in keys %}
+                sel.push({{ p }});
+            {% endfor %}
+            var i = 0;
+            $("#respuesta_curso option").each(function(){
+                $(this).hide();
+            });
+            $("#respuesta_curso option").each(function(){
+                for(i=0; i<sel.length; i++){
+                    if($(this).val()==sel[i]){
+                        $(this).show();
+                    }else if($(this).val()!=sel[i]){
+                        $(this).remove();
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
+            <h1 class="wow flipInX">Prácticas</h1>
+            <h2 class="wow flipInX">{{ empresas.nombre }}</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="section">
+        <div class="container-fluid ">
+            <div class="row text-center backbanner">
+            </div>
+        </div>
+        {% set w = 0 %}
+        {% set e = 0 %}
+        {% set p = 0 %}
+        {% set a = 0 %}
+        {% for i in archivos %}
+            {% if i.categoria == 1 %}
+                {% set e = e + 1 %}
+            {% elseif i.categoria == 2 %}
+                {% set p = p + 1 %}
+            {% elseif i.categoria == 3 %}
+                {% set w = w + 1 %}
+            {% elseif i.categoria == 4 %}
+                {% set a = a + 1 %}
+            {% endif %}
+        {% endfor %}
+        {% set porcentaje = 0 %}
+        {% if w > 0 %}
+            {% set porcentaje = porcentaje + 1 %}
+        {% endif %}
+        {% if e > 0 %}
+            {% set porcentaje = porcentaje + 1 %}
+        {% endif %}
+        {% if p > 0 %}
+            {% set porcentaje = porcentaje + 1 %}
+        {% endif %}
+        {% if a > 0 %}
+            {% set porcentaje = porcentaje + 1 %}
+        {% endif %}
+        <style>
+            {% set t = 100 / porcentaje %}
+            .nav-tabs > li {
+                width: {{ t }}%;
+            }
+        </style>
+        <div class="container">
+            <div class="row espacio1">
+                <div class="col-sm-12">
+                    <section style="background:#efefe9;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="board">
+                                    <div class="board-inner">
+                                        <ul class="nav nav-tabs" id="myTab">
+                                            <div class="liner"></div>
+                                            {% if e > 0 %}
+                                                <li class="active">
+                                                    <a href="#excel" data-toggle="tab" title="Excel">
+                                                  <span class="round-tabs one">
+                                                          <i class="fa fa-file-excel-o"></i>
+                                                  </span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {% if p > 0 %}
+                                                <li>
+                                                    <a href="#power" data-toggle="tab" title="PowerPoint">
+                                                 <span class="round-tabs two">
+                                                     <i class="fa fa-file-powerpoint-o"></i>
+                                                 </span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {% if w > 0 %}
+                                                <li>
+                                                    <a href="#word" data-toggle="tab" title="Word">
+                                                 <span class="round-tabs three">
+                                                      <i class="fa fa-file-word-o"></i>
+                                                 </span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {% if a > 0 %}
+                                                <li>
+                                                    <a href="#anexos" data-toggle="tab" title="Anexos">
+                                                 <span class="round-tabs four">
+                                                      <i class="fa fa-paperclip"></i>
+                                                 </span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        {% if e > 0 %}
+                                            <div class="tab-pane fade in active" id="excel">
+                                                <div class="row">
+                                                    {% for excel in archivos %}
+                                                        {% if excel.categoria == 1 %}
+                                                            <div class="col-sm-4">
+                                                                <p class="text-center">
+                                                                    <a href="{{ asset('uploads/practicas/'~excel.url) }}" download="{{ excel.nombre }}" class="btn btn-success btn-outline-rounded green"> {{ excel.nombre }} <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                                </p>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if p > 0 %}
+                                            <div class="tab-pane fade {% if e == 0 %}in active{% endif %}" id="power">
+                                                <div class="row">
+                                                    {% for power in archivos %}
+                                                        {% if power.categoria == 2 %}
+                                                            <div class="col-sm-4">
+                                                                <p class="text-center">
+                                                                    <a href="{{ asset('uploads/practicas/'~power.url) }}" download="{{ power.nombre }}" class="btn btn-success btn-outline-rounded green"> {{ power.nombre }} <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                                </p>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if w > 0 %}
+                                            <div class="tab-pane fade {% if e == 0 and p == 0 %}in active{% endif %}" id="word">
+                                                <div class="row">
+                                                    {% for word in archivos %}
+                                                        {% if word.categoria == 3 %}
+                                                            <div class="col-sm-4">
+                                                                <p class="text-center">
+                                                                    <a href="{{ asset('uploads/practicas/'~word.url) }}" download="{{ word.nombre }}" class="btn btn-success btn-outline-rounded green"> {{ word.nombre }} <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                                </p>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if a > 0 %}
+                                            <div class="tab-pane fade {% if e == 0 and p == 0 and w == 0 %}in active{% endif %}" id="anexos">
+                                                <div class="row">
+                                                    {% for anexos in archivos %}
+                                                        {% if anexos.categoria == 1 %}
+                                                            <div class="col-sm-4">
+                                                                <p class="text-center">
+                                                                    <a href="{{ asset('uploads/practicas/'~anexos.url) }}" download="{{ anexos.nombre }}" class="btn btn-success btn-outline-rounded green"> {{ anexos.nombre }} <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                                </p>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                                    <h2 class="text-center">Carga de Archivos</h2>
+                                    <div class="col-sm-6 col-sm-push-3 text-center">
+                                        {{ form_start(form,  {'action':path('empresas',{'slug':slug})}) }}
+                                        <div class="form-group">
+                                            {{ form_label(form.curso) }}
+                                            {{ form_widget(form.curso, {'attr': {'class': 'form-control'} }) }}
+                                            {% if form.curso.vars.errors|length > 0 %}
+                                                <p class="help-block">
+                                                    {% for error in form.curso.vars.errors %}
+                                                        {{ error.message }} <br/>
+                                                    {% endfor %}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.nombre) }}
+                                            {{ form_widget(form.nombre, {'attr': {'class': 'form-control'} }) }}
+                                            {% if form.nombre.vars.errors|length > 0 %}
+                                                <p class="help-block">
+                                                    {% for error in form.nombre.vars.errors %}
+                                                        {{ error.message }} <br/>
+                                                    {% endfor %}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.apaterno) }}
+                                            {{ form_widget(form.apaterno, {'attr': {'class': 'form-control'} }) }}
+                                            {% if form.apaterno.vars.errors|length > 0 %}
+                                                <p class="help-block">
+                                                    {% for error in form.apaterno.vars.errors %}
+                                                        {{ error.message }} <br/>
+                                                    {% endfor %}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.amaterno) }}
+                                            {{ form_widget(form.amaterno, {'attr': {'class': 'form-control'} }) }}
+                                            {% if form.amaterno.vars.errors|length > 0 %}
+                                                <p class="help-block">
+                                                    {% for error in form.amaterno.vars.errors %}
+                                                        {{ error.message }} <br/>
+                                                    {% endfor %}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.email) }}
+                                            {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
+                                            {% if form.email.vars.errors|length > 0 %}
+                                                <p class="help-block">
+                                                    {% for error in form.email.vars.errors %}
+                                                        {{ error.message }} <br/>
+                                                    {% endfor %}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.url) }}
+                                            {{ form_widget(form.url, {'attr': {'class': 'form-control'} }) }}
+                                            {% if form.url.vars.errors|length > 0 %}
+                                                <p class="help-block">
+                                                    {% for error in form.url.vars.errors %}
+                                                        {{ error.message }} <br/>
+                                                    {% endfor %}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                        {{ form_widget(form.enviar, {'attr': {'class ': 'btn btn-primary'} }) }}
+                                        {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <p>
+                    <a href="https://capacitacioninformatica.com/webmail" target="_blank"><i class="fa fa-id-card-o"></i></a>
+                    <a href="{{ path('admin_home') }}" target="_blank"><i class="fa fa-lock" style="margin-left: 25px;"></i></a>
+                </p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

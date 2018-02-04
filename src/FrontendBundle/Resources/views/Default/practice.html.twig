@@ -7,6 +7,8 @@
     <meta property="og:title" content="CI | Prácticas" />
     <meta property="og:description" content="Prácticas para Cursos." />
     <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+    <meta property="keywords" content="capacitacion informatica,capacitacion,informatica,excel,desarrollo web,certificacion,certificaciones,equipo de computo,computo,consumibles,venta">
+    <meta property="description" content="Capacitación Informática, Desarrollo Web, Certificaciones y Venta de Equipo de Cómputo y Consumibles">
 {% endblock %}
 
 {% block title %}Prácticas | {{ parent() }}{% endblock %}
@@ -28,7 +30,7 @@
     <div class="banner-info text-center">
         <div class="col-lg-12 col-md-12 col-sm-12 ">
             <h1 class="wow flipInX">Prácticas</h1>
-            <h2 class="wow flipInX">La Salle Neza</h2>
+            <h2 class="wow flipInX">La Salle</h2>
         </div>
     </div>
 {% endblock %}
@@ -67,6 +69,13 @@
                                                 <a href="#word" data-toggle="tab" title="Word">
                                                  <span class="round-tabs three">
                                                       <i class="fa fa-file-word-o"></i>
+                                                 </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#anexos" data-toggle="tab" title="Anexos">
+                                                 <span class="round-tabs four">
+                                                      <i class="fa fa-paperclip"></i>
                                                  </span>
                                                 </a>
                                             </li>
@@ -159,6 +168,20 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="tab-pane fade" id="anexos">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/welcome.avi') }}" download="Welcome to Office 2013" class="btn btn-success btn-outline-rounded green"> Video Ejemplo <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/lasalle/welcome.mp3') }}" download="Welcome to Office 2013" class="btn btn-success btn-outline-rounded green"> Audio Ejemplo <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="clearfix"></div>
                                     </div>
 
@@ -177,6 +200,10 @@
         <div class="container">
             <div class="row text-center">
                 <p>&copy; CI - Derechos reservados.</p>
+                <p>
+                    <a href="https://capacitacioninformatica.com/webmail" target="_blank"><i class="fa fa-id-card-o"></i></a>
+                    <a href="{{ path('admin_home') }}" target="_blank"><i class="fa fa-lock" style="margin-left: 25px;"></i></a>
+                </p>
                 <div class="credits">
                     Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
                 </div>

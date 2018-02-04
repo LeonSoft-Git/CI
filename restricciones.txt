@@ -1,0 +1,12 @@
+/*PHP*/
+$user = $this->get('security.token_storage')->getToken()->getUser();
+if($user->getTipo() == 1 || $user->getTipo()==2){
+
+}else{
+    return $this->redirect($this->generateUrl('admin_home'));
+}
+
+/*twig*/
+{% if app.user.tipo == 1 or app.user.tipo == 2 %}
+
+{% endif %}

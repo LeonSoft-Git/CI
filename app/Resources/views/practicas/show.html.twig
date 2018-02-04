@@ -1,0 +1,68 @@
+    {% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+{{ include('@Admin/partials/navegacion.html.twig',{'menu':'CI','submenu':'Practicas'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+<script src="{{ asset('admin/js/jasny-bootstrap.js') }}"></script>
+{% endblock %}
+
+    {% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Ver Registro</h3>                <form class="form-horizontal" role="form">                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Id</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ practica.id }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Grupo</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ practica.cursos }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Nombre</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ practica.nombre }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Apellido Paterno</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ practica.apaterno }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Apellido Materno</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ practica.amaterno }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">                                        {{ practica.email }}                                </p>
+                        </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Solución</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                   <a href="{{ asset('uploads/soluciones/'~practica.url) }}" download="{{ practica.nombre }}-{{ practica.apaterno }}">Descargar Solucion</a>                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Fecha de Subida</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if practica.createdat %}{{ practica.createdat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                        <div class="form-group m-b-0">
+                        <div class="col-sm-12">
+                                                                    <a class="btn btn-inverse waves-effect waves-light m-t-10" style="float:left; margin:5px;" href="{{ path('practicas_index') }}">Regresar</a>  </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

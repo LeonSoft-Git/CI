@@ -1,0 +1,183 @@
+                                Textiles Miller
+                        Resumen de pedidos para Noviembre 2012
+
+Estado   Canal      Precio Categoría       Cant.  Dólares    
+======== ========== ====== =============   ====== ========= 
+WA       Minorista  Medio  Infantil             9      40,5
+                    Bajo                      143    434,06
+                    Alto   Arte                17      93,5
+                    Medio                      23     103,5
+                    Alto   Deportes            26       143
+                    Medio                       6        27
+                    Bajo                        4        14
+                    Alto   Navegación          13      71,5
+                    Medio                       7      31,5
+                    Bajo                       25      87,5
+                    Medio  Dinosaurios         22        99
+                    Bajo                       22        77
+                    Medio  Humor              143    554,32
+                    Bajo                       13      45,5
+                    Medio  Ecología            35     157,5
+                    Bajo                       40       140
+         Mayorista  Medio  Infantil            30      67,5
+                    Bajo                       10      17,5
+                    Alto   Arte               410  1.062,13
+                    Medio                     900  1.848,48
+                    Alto   Deportes            25     68,75
+                    Medio                      30      67,5
+                    Bajo                        5      8,75
+                    Alto   Navegación         910  2.134,83
+                    Medio                      60       135
+                    Bajo                      405     687,6
+                    Medio  Dinosaurios        660  1.401,08
+                    Bajo                      345     586,6
+                    Medio  Humor               65    146,25
+                    Bajo                       25     43,75
+                    Medio  Ecología           210    459,16
+                    Bajo                      195    341,25
+OR       Minorista  Medio  Infantil           109     490,5
+                    Bajo                      405  1.112,35
+                    Alto   Arte               150    737,03
+                    Medio                      65     292,5
+                    Alto   Deportes            12        66
+                    Medio                     207    853,08
+                    Bajo                       13      45,5
+                    Alto   Navegación          60       330
+                    Medio                      35     157,5
+                    Bajo                       45     157,5
+                    Medio  Dinosaurios        230    915,22
+                    Bajo                       75     262,5
+                    Medio  Humor              575  1.212,91
+                    Bajo                      135    406,73
+                    Medio  Ecología           165    655,88
+                    Bajo                      435  1.239,63
+         Mayorista  Medio  Infantil           325    710,34
+                    Bajo                      945  1.557,91
+                    Alto   Arte               900  2.196,42
+                    Medio                      40        90
+                    Alto   Deportes            65    178,75
+                    Medio                      60       135
+                    Bajo                       10      17,5
+                    Alto   Navegación         130     357,5
+                    Medio                      35     78,75
+                    Bajo                       55     96,25
+                    Medio  Dinosaurios         75    168,75
+                    Bajo                       40        70
+                    Medio  Humor              245    535,01
+                    Bajo                       95    166,25
+                    Medio  Ecología           325    709,57
+                    Bajo                      295    501,69
+CA       Minorista  Medio  Infantil            27     121,5
+                    Bajo                       38       133
+                    Alto   Arte               165    793,04
+                    Medio                     120       540
+                    Medio  Deportes            45     202,5
+                    Medio  Dinosaurios         30       135
+                    Bajo                       60       210
+                    Medio  Humor               90       405
+                    Bajo                      105     367,5
+                    Medio  Ecología            60       270
+                    Bajo                       75     262,5
+         Mayorista  Medio  Infantil            35     78,75
+                    Bajo                      250    424,39
+                    Alto   Arte                30      82,5
+                    Medio                     210     458,8
+                    Alto   Deportes            40       110
+                    Medio                      65    146,25
+                    Bajo                       55     96,25
+                    Medio  Dinosaurios        150     337,5
+                    Bajo                      240    407,57
+                    Medio  Humor              165    371,25
+                    Bajo                      435    738,58
+                    Medio  Ecología           210    458,65
+                    Bajo                      225    393,75
+AZ       Minorista  Medio  Infantil            98       441
+                    Bajo                       56       196
+                    Alto   Arte                53     291,5
+                    Medio                     208    676,39
+                    Alto   Deportes            62       341
+                    Medio                      16        72
+                    Bajo                       13      45,5
+                    Medio  Dinosaurios        137    553,12
+                    Bajo                      107     374,5
+                    Medio  Humor               17      76,5
+                    Bajo                       65     227,5
+                    Medio  Ecología            66       297
+                    Bajo                       12        42
+         Mayorista  Medio  Infantil           145    326,25
+                    Bajo                       40        70
+                    Alto   Arte               145    398,75
+                    Medio                     100       225
+                    Alto   Deportes            95    261,25
+                    Medio                     120       270
+                    Bajo                       25     43,75
+                    Medio  Dinosaurios        315    688,69
+                    Bajo                      235    411,25
+                    Medio  Humor               40        90
+                    Bajo                       20        35
+                    Medio  Ecología            90     202,5
+                    Bajo                       40        70
+NV       Minorista  Medio  Infantil           476  1.977,00
+                    Bajo                       53     185,5
+                    Alto   Arte               410  1.422,41
+                    Medio                     145    577,53
+                    Alto   Deportes           647  1.261,55
+                    Medio                      70       315
+                    Bajo                      115     402,5
+                    Medio  Dinosaurios        185    724,07
+                    Bajo                      155     542,5
+                    Medio  Humor               90       405
+                    Bajo                       85     297,5
+                    Medio  Ecología           120    477,75
+                    Bajo                      115     402,5
+         Mayorista  Medio  Infantil            35     78,75
+                    Bajo                       55     96,25
+                    Alto   Arte               345    893,79
+                    Medio                      70     157,5
+                    Alto   Deportes            50     137,5
+                    Medio                      15     33,75
+                    Bajo                       20        35
+                    Medio  Dinosaurios         85    191,25
+                    Bajo                       70     122,5
+                    Medio  Humor               80       180
+                    Bajo                       30      52,5
+                    Medio  Ecología            80       180
+                    Bajo                       65    113,75
+UT       Minorista  Medio  Infantil            64       288
+                    Bajo                      124       434
+                    Alto   Arte                40       220
+                    Medio                      50       225
+                    Alto   Deportes            25     137,5
+                    Medio                      15      67,5
+                    Medio  Dinosaurios         75     337,5
+                    Bajo                      160       560
+                    Medio  Humor               45     202,5
+                    Bajo                       35     122,5
+                    Medio  Ecología           270    908,97
+                    Bajo                      120       420
+         Mayorista  Medio  Infantil           160       360
+                    Bajo                       85    148,75
+                    Alto   Arte               690  1.731,61
+                    Medio                     270    589,49
+                    Alto   Deportes           435  1.128,25
+                    Medio                      25     56,25
+                    Bajo                      925  1.474,05
+                    Medio  Dinosaurios        285    622,49
+                    Bajo                      150     262,5
+                    Medio  Humor              660  1.399,20
+                    Bajo                      570     940,1
+                    Medio  Ecología           300    655,97
+                    Bajo                      240    407,78
+ID       Minorista  Medio  Infantil            56       252
+                    Bajo                       64       224
+                    Alto   Arte                75     412,5
+                    Medio                      90       405
+                    Alto   Deportes            28       154
+                    Medio                     230    754,81
+                    Bajo                      272    698,06
+                    Medio  Dinosaurios         55     247,5
+                    Bajo                       65     227,5
+                    Medio  Humor               75     337,5
+                    Bajo                       70       245
+                    Medio  Ecología            60       270
+                    Bajo                       55     192,5

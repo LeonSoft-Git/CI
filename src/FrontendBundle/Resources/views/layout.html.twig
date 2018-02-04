@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block metas %}{% endblock %}
     <meta property="og:url" content="{{ absolute_url(path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params'))) }}"/>
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Capacitación Informática">
+    <meta property="fb:app_id" content="559694107725736">
+    <meta property="fb:pages" content="1912917198991493">
+
     {% block opengraph %}{% endblock %}
 
     <title>{% block title %}CI{% endblock %}</title>
@@ -16,6 +22,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
     {% block stylesheets %}{% endblock %}
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113152243-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body>
 <div id="myDiv">

@@ -1,0 +1,72 @@
+    {% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+{{ include('@Admin/partials/navegacion.html.twig',{'menu':'CI','submenu':'Cursos'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+<script src="{{ asset('admin/js/jasny-bootstrap.js') }}"></script>
+{% endblock %}
+
+    {% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Ver Registro</h3>                <form class="form-horizontal" role="form">                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Id</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ curso.id }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                        <label class="col-sm-2 control-label">Instructor</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">              {{ curso.usuarios.nombre }} {{ curso.usuarios.apaterno }}                              </p>
+                        </div>
+                        </div>                        <div class="form-group">
+                        <label class="col-sm-2 control-label">Grupo</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">              {{ curso.grupos.nombre }}                              </p>
+                        </div>
+                        </div>                        <div class="form-group">
+                        <label class="col-sm-2 control-label">Empresa</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">              {{ curso.grupos.empresas }}                              </p>
+                        </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Fecha</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if curso.fecha %}{{ curso.fecha|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Activo</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">              {{ curso.activo|sino }}                              </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Creado</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if curso.createdat %}{{ curso.createdat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Actualizado</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if curso.updatedat %}{{ curso.updatedat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                    <div class="form-group m-b-0">
+                        <div class="col-sm-12">
+                                                                    <a class="btn btn-inverse waves-effect waves-light m-t-10" style="float:left; margin:5px;" href="{{ path('cursos_index') }}">Regresar</a>
+                            {% if app.user.tipo == 1 or app.user.tipo == 2 %}
+                                <a class="btn btn-info waves-effect waves-light m-t-10" style="float:left;  margin:5px;"  href="{{ path('cursos_edit', { 'id': curso.id }) }}">Editar</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

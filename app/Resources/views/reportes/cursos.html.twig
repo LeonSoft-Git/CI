@@ -1,0 +1,30 @@
+{% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+    {{ include('@Admin/partials/navegacion.html.twig',{'menu':'CI','submenu':'Reporte por Cursos'}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Reporte por Cursos</h3>
+                {{ form_start(form,  {'action':path('reportes-curso')}) }}
+                <div class="form-group">
+                    {{ form_label(form.curso) }}
+                    {{ form_widget(form.curso, {'attr': {'class': 'form-control'} }) }}
+                    {% if form.curso.vars.errors|length > 0 %}
+                        <p class="help-block">
+                            {% for error in form.curso.vars.errors %}
+                                {{ error.message }} <br/>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </div>
+                {{ form_widget(form.descargar, {'attr': {'class ': 'btn btn-primary'} }) }}
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

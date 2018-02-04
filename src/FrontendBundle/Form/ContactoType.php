@@ -77,7 +77,7 @@ class ContactoType extends AbstractType
                 'required'=>true,
                 'constraints' => array(
                     new NotBlank(array(
-                        'message' => 'Ingresa un mensaje o una pregungta',
+                        'message' => 'Ingresa un mensaje o una pregunta',
                     )),
                 ),
                 'attr' => array('placeholder' => 'Mensaje o Pregunta*','rows'=>'5','autocomplete'=>'off')

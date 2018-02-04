@@ -7,6 +7,8 @@
     <meta property="og:title" content="CI | Contacto" />
     <meta property="og:description" content="Contáctanos" />
     <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+    <meta property="keywords" content="capacitacion informatica,capacitacion,informatica,excel,desarrollo web,certificacion,certificaciones,equipo de computo,computo,consumibles,venta">
+    <meta property="description" content="Capacitación Informática, Desarrollo Web, Certificaciones y Venta de Equipo de Cómputo y Consumibles">
 {% endblock %}
 
 {% block title %}Contacto | {{ parent() }}{% endblock %}
@@ -21,6 +23,11 @@
     {% if enviado==1 %}
         <script type="text/javascript">
             $(document).ready(function () {
+                $('#contacto_nombre').val('');
+                $('#contacto_apellidos').val('');
+                $('#contacto_email').val('');
+                $('#contacto_telefono').val('');
+                $('#contacto_mensaje').val('');
                 swal({
                     title: "Mensaje Enviado!",
                     text: "Gracias!<br>Pronto te contactaremos.",
@@ -64,7 +71,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-5 col-lg-5 col-xs-12 col-md-12">
+                {#<div class="col-md-5 col-lg-5 col-xs-12 col-md-12">
                     <h4 class="title custom-font text-black">
                         HORARIO DE ATENCIÓN
                     </h4>
@@ -85,9 +92,9 @@
                         722-542-49-66
                     </p>
 
-                </div>
+                </div>#}
 
-                <div class="col-lg-7 col-sm-7 address">
+                <div class="col-sm-6 col-sm-push-3 address">
                     <div class="contact-form">
                         {{ form_start(form,  {'action':path('contact')}) }}
                             <div class="form-group">
@@ -161,6 +168,10 @@
         <div class="container">
             <div class="row text-center">
                 <p>&copy; CI - Derechos reservados.</p>
+                <p>
+                    <a href="https://capacitacioninformatica.com/webmail" target="_blank"><i class="fa fa-id-card-o"></i></a>
+                    <a href="{{ path('admin_home') }}" target="_blank"><i class="fa fa-lock" style="margin-left: 25px;"></i></a>
+                </p>
                 <div class="credits">
                     Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
                 </div>

@@ -1,0 +1,186 @@
+    {% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+{{ include('@Admin/partials/navegacion.html.twig',{'menu':'CI','submenu':'Mensajes'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 50px;
+            text-align: center;
+            margin-bottom: 7px;
+            margin-top: 7px;
+            color: black;
+        }
+        .text-message{
+            color: black;
+            font-weight: 500;
+        }
+        .left .circle{
+            background: whitesmoke;
+        }
+        .right .circle{
+            background: lightgreen;
+        }
+        .right .circle.delete{
+            background: white;
+            color: red;
+        }
+        .delete a{
+            color: white;
+        }
+        .right .circle.delete:hover{
+            background: red;
+            color: white;
+        }
+        .message{
+            margin-bottom: 10px;
+            border-radius: 15px;
+            border: solid 1px grey;
+        }
+        .message.left{
+            background: lightgreen;
+        }
+        .message.right{
+            background: whitesmoke;
+        }
+        .date{
+            padding-top: 5px;
+        }
+        .chat{
+            overflow-y: scroll;
+            height: 350px;
+        }
+        .btn-primary{
+            float: right;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+<script src="{{ asset('admin/js/jasny-bootstrap.js') }}"></script>
+{% endblock %}
+
+    {% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Conversación con: <strong>{{ destino['nombre'] }} {{ destino['apellido'] }}</strong></h3>
+                <div class="row chat">
+                    {% set i = enviados|length %}
+                    {% set j = recibidos|length %}
+                    {% set x = 0 %}
+                    {% set y = 0 %}
+                    {% for count in 1..i+j %}
+                        {% if enviados[x] is not defined and recibidos[y] is defined %}
+                            <div class="row message left">
+                                <div class="col-xs-1">
+                                    <div class="circle">{{ destino['nombre']|slice(0,1)|upper }}{{ destino['apellido']|slice(0,1)|upper }}</div>
+                                </div>
+                                <div class="col-xs-11">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-xs-push-10">
+                                            <p class="date">{{ recibidos[y].createdAt|date('d/m/Y H:i') }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <p class="text-message">{{ recibidos[y].mensaje }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% set y = y + 1 %}
+                        {% elseif enviados[x] is defined and recibidos[y] is not defined %}
+                            <div class="row message right">
+                                <div class="col-xs-10">
+                                    <div class="row">
+                                        <div class="col-xs-2">
+                                            <p class="date">{{ enviados[x].createdAt|date('d/m/Y H:i') }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-10 col-xs-push-1 text-right">
+                                            <p class="text-message">{{ enviados[x].mensaje }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="circle">{{ app.user.nombre|slice(0,1)|upper }}{{ app.user.apaterno|slice(0,1)|upper }}</div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <a href="{{ path('mensajes_delete', { 'id': enviados[x].id }) }}" data-toggle="tooltip" title="Borrar Mensaje"><div class="circle delete">X</div></a>
+                                </div>
+                            </div>
+                            {% set x = x + 1 %}
+                        {% elseif enviados[x] is defined and recibidos[y] is defined %}
+                            {% if enviados[x].createdAt < recibidos[y].createdAt %}
+                                <div class="row message right">
+                                    <div class="col-xs-10">
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <p class="date">{{ enviados[x].createdAt|date('d/m/Y H:i') }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-10 col-xs-push-1 text-right">
+                                                <p class="text-message">{{ enviados[x].mensaje }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <div class="circle">{{ app.user.nombre|slice(0,1)|upper }}{{ app.user.apaterno|slice(0,1)|upper }}</div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="{{ path('mensajes_delete', { 'id': enviados[x].id }) }}" data-toggle="tooltip" title="Borrar Mensaje"><div class="circle delete">X</div></a>
+                                    </div>
+                                </div>
+                                {% set x = x + 1 %}
+                            {% elseif enviados[x].createdAt > recibidos[y].createdAt %}
+                                <div class="row message left">
+                                    <div class="col-xs-1">
+                                        <div class="circle">{{ destino['nombre']|slice(0,1)|upper }}{{ destino['apellido']|slice(0,1)|upper }}</div>
+                                    </div>
+                                    <div class="col-xs-11">
+                                        <div class="row">
+                                            <div class="col-xs-2 col-xs-push-10">
+                                                <p class="date">{{ recibidos[y].createdAt|date('d/m/Y H:i') }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <p class="text-message">{{ recibidos[y].mensaje }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% set y = y + 1 %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {{ form_start(form,  {'action':path('mensajes_show',{ 'id': id })}) }}
+                <div class="form-group">
+                    {{ form_widget(form.mensaje, {'attr': {'class': 'form-control'} }) }}
+                    {% if form.mensaje.vars.errors|length > 0 %}
+                        <p class="help-block">
+                            {% for error in form.mensaje.vars.errors %}
+                                {{ error.message }} <br/>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </div>
+                {{ form_widget(form.enviar, {'attr': {'class ': 'btn btn-primary'} }) }}
+                {{ form_end(form) }}
+                <a class="btn btn-inverse waves-effect waves-light m-t-10" style="margin:5px; margin-top: 30px!important;" href="{{ path('mensajes_index') }}">Regresar</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

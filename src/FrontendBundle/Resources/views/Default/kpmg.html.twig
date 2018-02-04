@@ -1,0 +1,155 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block background %}{{ asset('assets/img/background-blue.png') }}{% endblock %}
+
+{%  block opengraph %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CI | Prácticas KPMG" />
+    <meta property="og:description" content="Prácticas para KPMG." />
+    <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+    <meta property="keywords" content="capacitacion informatica,capacitacion,informatica,excel,desarrollo web,certificacion,certificaciones,equipo de computo,computo,consumibles,venta">
+    <meta property="description" content="Capacitación Informática, Desarrollo Web, Certificaciones y Venta de Equipo de Cómputo y Consumibles">
+{% endblock %}
+
+{% block title %}Prácticas KPMG | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/practice.css') }}">
+    <style>
+        .nav-tabs > li {
+            width: 100%!important;
+        }
+    </style>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        $(function(){
+            $('a[title]').tooltip();
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="banner-info text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 ">
+            <h1 class="wow flipInX">Prácticas</h1>
+            <h2 class="wow flipInX">KPMG</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block section %}
+    <div class="section">
+        <div class="container-fluid ">
+            <div class="row text-center backbanner">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row espacio1">
+                <div class="col-sm-12">
+                    <section style="background:#efefe9;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="board">
+                                    <div class="board-inner">
+                                        <ul class="nav nav-tabs" id="myTab">
+                                            <div class="liner"></div>
+                                            <li class="active">
+                                                <a href="#excel" data-toggle="tab" title="Excel">
+                                                  <span class="round-tabs one">
+                                                          <i class="fa fa-file-excel-o"></i>
+                                                  </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade in active" id="excel">
+                                            {#<h3 class="head text-center">Welcome to Bootsnipp<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
+                                            <p class="narrow text-center">
+                                                Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                            </p>#}
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/1_empleadospais.xlsx') }}" download="1 EmpleadosPais" class="btn btn-success btn-outline-rounded green"> 1 empleadosPais <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/2_ventas.xlsx') }}" download="2 Ventas" class="btn btn-success btn-outline-rounded green"> 2 ventas <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/3_antiguedad.xlsx') }}" download="3 Antiguedad" class="btn btn-success btn-outline-rounded green"> 3 antiguedad <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/3_comisiones.xlsx') }}" download="3 Comisiones" class="btn btn-success btn-outline-rounded green"> 3 comisiones <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/3_tdinamicassubtotales.xlsx') }}" download="3 T-Dinamicas Subtotales" class="btn btn-success btn-outline-rounded green"> 3 t-dinamicas subtotales <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/4_consolidados.xlsx') }}" download="4 Consolidados" class="btn btn-success btn-outline-rounded green"> 4 consolidados <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/curso.xlsx') }}" download="Curso" class="btn btn-success btn-outline-rounded green"> curso <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/nov2012.txt') }}" download="nov2012" class="btn btn-success btn-outline-rounded green"> nov2012 <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/solver2.xlsx') }}" download="solver2" class="btn btn-success btn-outline-rounded green"> solver2 <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <p class="text-center">
+                                                        <a href="{{ asset('uploads/kpmg/tablas_verduleros.xlsx') }}" download="Tablas Verduleros" class="btn btn-success btn-outline-rounded green"> tablas verduleros <span style="margin-left:10px;" class="glyphicon glyphicon-download-alt"></span></a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footerFuera %}
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>&copy; CI - Derechos reservados.</p>
+                <p>
+                    <a href="https://capacitacioninformatica.com/webmail" target="_blank"><i class="fa fa-id-card-o"></i></a>
+                    <a href="{{ path('admin_home') }}" target="_blank"><i class="fa fa-lock" style="margin-left: 25px;"></i></a>
+                </p>
+                <div class="credits">
+                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

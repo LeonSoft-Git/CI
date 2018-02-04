@@ -1,0 +1,51 @@
+    {% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+{{ include('@Admin/partials/navegacion.html.twig',{'menu':'CI','submenu':'Mensajes'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.js') }}"></script><script>
+    $(document).ready(function(){
+        $('#myTable').DataTable();
+    });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Conversaciones</h3>
+               {#<p class="text-muted m-b-30">{{ Mensajes</p>#}
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Contacto</th>  <th>Mensaje</th>   <th>Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set i = 0 %}
+                    {% for mensaje in mensajes %}
+                    <tr {% if id[i] in unread %}style="font-weight: bolder;"{% endif %}>
+                         <td>{{ nombres[i] }}</td>     <td>{{ mensaje|slice(0, 15) }}{% if mensaje|length > 15 %}...{% endif %}</td>           <td>
+                                    <div class="btn-group btn-group-xs">
+                                        <a href="{{ path('mensajes_show', { 'id': id[i] }) }}" data-toggle="tooltip" title="Ver" class="btn btn-default"><i class="fa fa-list-ul"></i></a>
+                                        {% if id[i] in unread %}<span style="margin-left: 10px;">Mensajes Sin Leer</span>{% endif %}
+                                    </div>
+                                </td>
+                    </tr>
+                    {% set i=i+1 %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

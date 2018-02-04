@@ -10,6 +10,8 @@
     <meta property="og:description" content="En CI hacemos tus ideas realidad. Nuestro equipo de desarrollo web cuenta
     con la experiencia que tú página necesita, para que sea la mejor en su categoría." />
     <meta property="og:image" content="{{ absolute_url(asset('assets/img/logo_ci_facebook.png')) }}" />
+    <meta property="keywords" content="capacitacion informatica,capacitacion,informatica,excel,desarrollo web,certificacion,certificaciones,equipo de computo,computo,consumibles,venta">
+    <meta property="description" content="Capacitación Informática, Desarrollo Web, Certificaciones y Venta de Equipo de Cómputo y Consumibles">
 {% endblock %}
 
 {% block title %}Desarrollo Web | {{ parent() }}{% endblock %}
@@ -63,8 +65,7 @@
                             <li class="list-group-item"><i class="icon-ok text-danger"></i>Adaptable a móviles</li>
                         </ul>
                         <div class="panel-footer">
-                            {#TODO formulario desarrollo web#}
-                            <a class="btn btn-lg btn-block btn-danger" href="contact.html">Compar ahora!</a>
+                            <a class="btn btn-lg btn-block btn-danger" href="{{ path('contact') }}">Compar ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +84,7 @@
                             <li class="list-group-item"><i class="icon-ok text-info"></i> Adaptable a móviles</li>
                         </ul>
                         <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-info" href="#">Comprar ahora!</a>
+                            <a class="btn btn-lg btn-block btn-info" href="{{ path('contact') }}">Comprar ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,7 @@
                             <li class="list-group-item"><i class="icon-ok text-success"></i> Adaptable a móviles</li>
                         </ul>
                         <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-success" href="#">Comprar ahora!</a>
+                            <a class="btn btn-lg btn-block btn-success" href="{{ path('contact') }}">Comprar ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -118,6 +119,10 @@
         <div class="container">
             <div class="row text-center">
                 <p>&copy; CI - Derechos reservados.</p>
+                <p>
+                    <a href="https://capacitacioninformatica.com/webmail" target="_blank"><i class="fa fa-id-card-o"></i></a>
+                    <a href="{{ path('admin_home') }}" target="_blank"><i class="fa fa-lock" style="margin-left: 25px;"></i></a>
+                </p>
                 <div class="credits">
                     Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
                 </div>

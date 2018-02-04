@@ -2,15 +2,20 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: doctrine_extensions.yml }
     - { resource: "@FrontendBundle/Resources/config/services.yml" }
+    - { resource: "@CoreBundle/Resources/config/services.yml" }
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: es_MX
     dev_mail: 'cesar.rios@capacitacioninformatica.com'
-    mailer_port: 465
-    mailer_encryption: ssl
+    prac_directory: '%kernel.root_dir%/../web/uploads/practicas'
+    anex_directory: '%kernel.root_dir%/../web/uploads/anexos'
+    man_directory: '%kernel.root_dir%/../web/uploads/manuales'
+    sol_directory: '%kernel.root_dir%/../web/uploads/soluciones'
 
 framework:
     #esi:             ~
@@ -64,6 +69,23 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        mappings:
+            translatable:
+                type: annotation
+                alias: Gedmo
+                prefix: Gedmo\Translatable\Entity
+                # make sure vendor library location is correct
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+            loggable:
+                type: annotation
+                alias: Gedmo
+                prefix: Gedmo\Loggable\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+            tree:
+                type: annotation
+                alias: Gedmo
+                prefix: Gedmo\Tree\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -71,6 +93,6 @@ swiftmailer:
     host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
-    port:  "%mailer_port%"
+    port:      "%mailer_port%"
     encryption:  "%mailer_encryption%"
     spool:     { type: memory }

@@ -42,8 +42,33 @@ core:
 frontend:
     resource: "@FrontendBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}/
+    requirements:
+        _locale: es|en
+
+redirect:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /es/
+        permanent: true
+
+withoutLocale:
+  path: /{page}
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    route: withLocale
+    permanent: true
+
+withLocale:
+  path: /es/{page}
 
 pageNotFound:
     path: /{path}
     defaults: {_controller: FrontendBundle:Default:error404}
+
+pageNotFoundlocale:
+  path: /{_locale}/{path}
+  defaults: {_controller: FrontendBundle:Default:error404}
+  requirements:
+    _locale: es|en

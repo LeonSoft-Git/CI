@@ -3338,3 +3338,21 @@
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+
+ul.language {
+  z-index: 9999;
+  float: right;
+  margin-right: 40px;
+  padding-left: 0px;
+  margin-bottom: 15px;
+}
+.language .btn {
+  line-height: 1;
+}
+.language .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.9);
+  min-width: auto;
+}
+.language .btn.focus,.language .btn:focus,.language .btn:hover {
+  color: #f2bd2d;
+}

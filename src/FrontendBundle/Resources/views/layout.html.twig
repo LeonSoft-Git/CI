@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/flag-icon-more.min.css') }}">
     {% block stylesheets %}{% endblock %}
 
     <script>
@@ -39,6 +40,15 @@
     <div class="header" style="background: url('{% block background %}{% endblock %}') no-repeat fixed;">
         <div class="bg-color" >
             <header id="main-header">
+                <ul class="dropdown language">
+                    <a class="btn btn-secondary dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="" data-language="es"><span class="flag-icon flag-icon-mx"></span> Español</a></li>
+                        <li><a class="dropdown-item" href="" data-language="en"><span class="flag-icon flag-icon-gb"></span> English</a></li>
+                    </div>
+                </ul>
                 <nav class="navbar navbar-default navbar-fixed-top">
                     <div class="container">
                         <div class="navbar-header">
@@ -51,31 +61,31 @@
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="{% block inicio %}{% endblock %}"><a href="{{ path('homepage') }}">Inicio</a></li>
-                                <li class="{% block acerca %}{% endblock %}"><a href="{{ path('about') }}">Acerca de</a></li>
+                                <li class="{% block inicio %}{% endblock %}"><a href="{{ path('homepage') }}">{{ 'menu.inicio'|trans }}</a></li>
+                                <li class="{% block acerca %}{% endblock %}"><a href="{{ path('about') }}">{{ 'menu.acerca'|trans }}</a></li>
                                 <li class="{% block servicios %}{% endblock %} dropdown">
                                     <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
-                                    "dropdown" data-toggle="dropdown" href="#">Servicios <i class="fa fa-angle-down"></i>
+                                    "dropdown" data-toggle="dropdown" href="#">{{ 'menu.servicios'|trans }} <i class="fa fa-angle-down"></i>
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="{{ path('capacitation') }}">Capacitaciones</a>
+                                            <a href="{{ path('capacitation') }}">{{ 'menu.servicios.capacitaciones'|trans }}</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('developer') }}">Desarrollo Web</a>
+                                            <a href="{{ path('developer') }}">{{ 'menu.servicios.desarrollo'|trans }}</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('certification') }}">Certificaciones</a>
+                                            <a href="{{ path('certification') }}">{{ 'menu.servicios.certificaciones'|trans }}</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('sell') }}">Venta de Equipo</a>
+                                            <a href="{{ path('sell') }}">{{ 'menu.servicios.venta'|trans }}</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('maintenance') }}">Mantenimiento de Equipo</a>
+                                            <a href="{{ path('maintenance') }}">{{ 'menu.servicios.mantenimiento'|trans }}</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="{% block contacto %}{% endblock %}"><a href="{{ path('contact') }}">Contacto</a></li>
+                                <li class="{% block contacto %}{% endblock %}"><a href="{{ path('contact') }}">{{ 'menu.contacto'|trans }}</a></li>
                                 <li class="redes">
                                     <ul class="social">
                                         <li> <a href="https://www.facebook.com/CapacitacionInformaticaMX/" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -113,6 +123,22 @@
 <script src="{{ asset('assets/js/wow.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 {% block javascript %}{% endblock %}
-
+<script>
+    $(document).ready(function () {
+        {% if app.request.locale=='es' %}
+            $('#language').html('<span class="flag-icon flag-icon-mx"></span> Español');
+        {% elseif app.request.locale=='en' %}
+            $('#language').html('<span class="flag-icon flag-icon-gb"></span> English');
+        {% endif %}
+        $('.language li a').click(function (e) {
+            e.preventDefault();
+            var language = $(this).attr('data-language');
+            var current = "{{ app.request.locale }}";
+            var url = "{{ app.request.uri }}";
+            url = url.replace("/"+current+"/","/"+language+"/");
+            window.location = url;
+        });
+    });
+</script>
 </body>
 </html>

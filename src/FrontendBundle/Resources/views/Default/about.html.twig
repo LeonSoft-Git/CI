@@ -2,7 +2,7 @@
 
 {% block background %}{{ asset('assets/img/images2.jpg') }}{% endblock %}
 
-{% block title %}Acerca De | {{ parent() }}{% endblock %}
+{% block title %}{{ 'about.title'|trans }} | {{ parent() }}{% endblock %}
 
 {%  block opengraph %}
     <meta property="og:type" content="website" />
@@ -24,18 +24,18 @@
 {% block body %}
     <div class="banner-info">
         <div class="row text-center espaciotop">
-            <h1>¿QUIÉNES <strong>SOMOS?</strong></h1>
+            <h1>{{ 'about.quienes'|trans }} <strong>{{ 'about.somos'|trans }}</strong></h1>
         </div>
         <hr>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="wrap-item text-center">
                     <div id="rotate-demo3" class="rotate" data-rotate-interval="6000" data-rotate-animate="zoomIn,zoomOut">
-                        <h1 class="demo1">Somos una empresa comprometida <strong><span class="rotate-arena"></span></strong></h1>
+                        <h1 class="demo1">{{ 'about.empresa'|trans }} <strong><span class="rotate-arena"></span></strong></h1>
                         <ul>
-                            <li><strong class="text-danger">en apoyar los programas académicos que forman parte del área de TI.</strong></li>
-                            <li><strong class="text-danger">en elevar el nivel de Cultura Informática.</strong></li>
-                            <li><strong class="text-danger">en la solución de desarrollo empresarial y académico.</strong></li>
+                            <li><strong class="text-danger">{{ 'about.empresa.1'|trans }}</strong></li>
+                            <li><strong class="text-danger">{{ 'about.empresa.2'|trans }}</strong></li>
+                            <li><strong class="text-danger">{{ 'about.empresa.3'|trans }}</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -54,11 +54,9 @@
                 </div>
 
                 <div class="col-xs-12 col-md-6">
-                    <p class="text-justify">Somos una empresa que proporciona soluciones de capacitación y entrenamiento en informática a cualquier nivel dentro de las organizaciones industriales, financieras, educativas, etc.</p>
-
-                    <p class="text-justify">Esto se logra a través de un modelo de capacitación en el cual se ejemplifican situaciones reales a las que se enfrenta el usuario día con día, y que con la experiencia de nuestros asesores se puede transmitir de un modo 100% práctico, manejando todas las aplicaciones del programa, contamos con herramientas de apoyo, como son manuales y prácticas diseñadas para poder continuar con un autoestudio y así reforzar los conocimientos adquiridos durante la capacitación.</p>
-
-                    <p class="text-justify">Al finalizar el curso los participantes podrán presentar un examen de Certificación Microsoft, obteniendo con esto un documento que avala el manejo del programa (al nivel que se curso), esta certificación queda registrada por el proveedor y la Secretaría del Trabajo.</p>
+                    <p class="text-justify">{{ 'about.descripcion1'|trans }}</p>
+                    <p class="text-justify">{{ 'about.descripcion2'|trans }}</p>
+                    <p class="text-justify">{{ 'about.descripcion3'|trans }}</p>
                 </div>
                 <div class="col-md-6 hidden-xs hidden-sm">
                     <img src="{{ asset('assets/img/icon_ci.png') }}" class="img-responsive img-center" alt="Logo Capacitacion Informatica" width="60%">
@@ -73,13 +71,13 @@
     <footer id="footer">
         <div class="container">
             <div class="row text-center">
-                <p>&copy; CI - Derechos reservados.</p>
+                <p>&copy; CI - {{ 'index.derechos'|trans }}</p>
                 <p>
                     <a href="https://capacitacioninformatica.com/webmail" target="_blank"><i class="fa fa-id-card-o"></i></a>
                     <a href="{{ path('admin_home') }}" target="_blank"><i class="fa fa-lock" style="margin-left: 25px;"></i></a>
                 </p>
                 <div class="credits">
-                    Designed  by <a href="https://capacitacioninformatica.com/">CI</a>
+                    {{ 'index.diseño'|trans }} <a href="https://capacitacioninformatica.com/">CI</a>
                 </div>
             </div>
         </div>
